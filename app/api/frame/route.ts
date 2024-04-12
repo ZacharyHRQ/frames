@@ -1,10 +1,20 @@
 import { FrameRequest, getFrameMessage, getFrameHtmlResponse } from '@coinbase/onchainkit/frame';
 import { NextRequest, NextResponse } from 'next/server';
 import { NEXT_PUBLIC_URL } from '../../config';
+import { kv } from '@vercel/kv';
 
+async function getVote() {
+  try {
+    const getExample = await kv.get('images');
+    console.log(getExample);
+  } catch (error) {
+    // Handle errors
+  }
+}
 async function getResponse(req: NextRequest): Promise<NextResponse> {
   const body: FrameRequest = await req.json();
   const { isValid, message } = await getFrameMessage(body, { neynarApiKey: 'NEYNAR_ONCHAIN_KIT' });
+  getVote();
 
   if (!isValid) {
     return new NextResponse('Message not valid', { status: 500 });
