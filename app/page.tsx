@@ -5,7 +5,7 @@ import { NEXT_PUBLIC_URL } from './config';
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
-      label: 'ITS GO TIME',
+      label: 'Check the result',
     },
     {
       action: 'tx',
@@ -25,7 +25,7 @@ const frameMetadata = getFrameMetadata({
 });
 
 export const metadata: Metadata = {
-  title: 'zizzamia.xyz',
+  title: 'gas',
   description: 'LFG',
   openGraph: {
     title: 'zizzamia.xyz',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <h1>zzz.xyz</h1>
+      <h1>FakeGasti</h1>
     </>
   );
 }

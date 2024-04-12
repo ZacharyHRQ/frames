@@ -23,27 +23,18 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   /**
    * Use this code to redirect to a different page
    */
-  if (message?.button === 3) {
-    return NextResponse.redirect(
-      'https://www.google.com/search?q=cute+dog+pictures&tbm=isch&source=lnms',
-      { status: 302 },
-    );
-  }
+  // if (message?.button === 3) {
+  //   return NextResponse.redirect(
+  //     'https://www.google.com/search?q=cute+dog+pictures&tbm=isch&source=lnms',
+  //     { status: 302 },
+  //   );
+  // }
 
   return new NextResponse(
     getFrameHtmlResponse({
       buttons: [
         {
           label: `State: ${state?.page || 0}`,
-        },
-        {
-          action: 'link',
-          label: 'OnchainKit',
-          target: 'https://onchainkit.xyz',
-        },
-        {
-          action: 'post_redirect',
-          label: 'Dog pictures',
         },
       ],
       image: {
